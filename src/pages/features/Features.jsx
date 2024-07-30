@@ -58,25 +58,28 @@ const FeaturesPage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-white px-4 sm:px-8 lg:px-50 py-8 pt-32"> {/* Adjusted padding at the top */}
-    <div ref={messagesEndRef} className="absolute top-0" />
-    <header className="text-center mb-12">
-      <h1 className="text-3xl lg:text-5xl px-25 font-bold text-darkGreen">Our Features</h1>
-    </header>
-    <FeatureSection>
-    <div className="mb-12 text-3xl lg:text-5xl px-25 font-bold text-darkGreen" >
-      <h1>
-        display content till we get something
-      </h1>
-    </div>
-    </FeatureSection>
+    <div className="min-h-screen relative bg-white px-4 sm:px-8 lg:px-50 py-8 pt-32">
+      <div className='w-full h-screen fixed top-0 left-0 bg-[#0000005e] backdrop-blur-sm'>
+        <p className="text-white text-center text-2xl lg:text-3xl font-bold relative top-1/2 -translate-y-1/2">IN PROGRESS...</p>
+      </div>
+      <div ref={messagesEndRef} className="absolute top-0" />
+      <header className="text-center mb-12">
+        <h1 className="text-3xl lg:text-5xl px-25 font-bold text-darkGreen">Our Features</h1>
+      </header>
+      <FeatureSection>
+        <div className="mb-12 text-3xl lg:text-5xl px-25 font-bold text-darkGreen" >
+          <h1>
+            display content till we get something
+          </h1>
+        </div>
+      </FeatureSection>
       <div className="lg:hidden space-y-12">
         <VitalSigns />
         <MultiUserProfiles />
         <DataSharing />
         <EmergencyFeature />
         <ChatBot />
-        <CTA/>
+        <CTA />
       </div>
       <div className="hidden md:block lg:block">
         <Slider {...settings}>
@@ -97,7 +100,7 @@ const FeaturesPage = () => {
           </div>
         </Slider>
         <div className="px-4">
-          <CTA/>
+          <CTA />
         </div>
       </div>
     </div>
