@@ -1,0 +1,155 @@
+.app:has(.layout .login-container){
+  header, footer{
+    display: none;
+  }
+
+  body{
+    @apply bg-neutral-300;
+  }
+}
+
+.login-container {
+  width: 100%;
+  max-width: 1536px;
+  height: 100dvh;
+  margin-inline: auto;
+  display: flex;
+  vertical-align: middle;
+  justify-content: center;
+
+  .login-wrapper {
+    display: flex;
+    vertical-align: middle;
+    justify-content: center;
+
+    .login-form {
+      flex: 1;
+      display: flex;
+      background: white;
+    }
+
+    .login-form-content{
+        width: 80%;
+        max-width: 400px;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        vertical-align: middle;
+        justify-content: center;
+        margin-inline: auto;
+
+        button{
+            width: 320px;
+            padding: 10px 20px;
+            margin-top: 1.5rem;
+            font-weight: 400;
+
+            &:hover{
+              @apply bg-secondary;
+
+            }
+        }
+
+        .content-text *{
+          text-align: center;
+        }
+    }
+
+    .email{
+      margin-top: 1rem;
+    }
+    .password{
+      margin-top: 1rem;
+    }
+
+    .email, .password {
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        margin-top: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+        // background-color: #f9f9f9;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 320px;
+
+        svg *{
+          @apply fill-primary
+        }
+    
+        .mailbox, .password-box {
+            margin-right: 10px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+    
+        input[type="email"], input[type="password"] {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: .8rem;
+            font-weight: 500;
+            font-family: inherit;
+            
+            &::placeholder{
+              font-weight: 300;
+              transition: color 300ms ease-in;
+            }
+    
+            &:focus {
+                outline: none;
+
+                &::placeholder{
+                  color: #bebebe;
+                }
+            }
+        }
+    }
+   
+    .login-providers{
+      width: fit-content;
+      display: flex;
+      margin-top: .5rem;
+      flex-direction: column;
+
+      > p{
+        font-size: .8rem;
+        font-weight: 600;
+        padding: .7rem 0;
+        text-align: center;
+      }
+
+      .wrapper{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: .8rem;
+
+        a{
+          img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            box-shadow: 6px 0px 19px rgba(0, 0, 0, 0.24);
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+}
+ 
+  .login-container .login-wrapper {
+    align-items: center;
+
+    .login-form{
+      height: fit-content;
+      width: 100%;
+      vertical-align: middle;
+      padding: 1rem 1rem;
+      border-radius: 8px;
+    }
+  }
+
+

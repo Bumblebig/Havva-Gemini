@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.slick-prev,
+.slick-next {
+  @apply z-10 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-gray-800 rounded-full flex justify-center items-center;
+}
+
+.slick-prev:hover,
+.slick-next:hover {
+  @apply bg-gray-900;
+}
+
+.slick-prev::before,
+.slick-next::before {
+  @apply text-white text-lg;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-semibold focus:outline-none transition duration-300 ease-in-out cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-white;
+  }
+
+  .btn-secondary {
+    @apply bg-secondary hover:bg-primary text-white;
+  }
+
+  .btn-danger {
+    @apply bg-danger text-white;
+  }
+
+  .btn-large {
+    @apply px-6 py-3 text-lg;
+  }
+
+  .btn-small {
+    @apply px-2 py-1 text-sm;
+  }
+}
+
+body * {
+  font-family: "DM Sans", Arial, Helvetica, sans-serif;
+}
+
+img {
+  max-width: 100%;
+}
+
+::-webkit-scrollbar {
+  width: 1px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* styles/globals.css */

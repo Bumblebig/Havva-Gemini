@@ -1,0 +1,8 @@
+Ayodeji - Dashboard, Auth, About, Buttons, Cards, etc
+Abdulrahman - Home, Pricing, Dashboard, Navbar
+Yusuf - Product, Contact, Features, Footer
+
+primary - #00262
+secondary
+accent
+neutral

@@ -1,0 +1,269 @@
+.about-us {
+  margin-top: 10%;
+
+  .text {
+    display: flex;
+    justify-content: center;
+    gap: 16px; // Equivalent to Tailwind's gap-4
+    width: 87%; // Equivalent to Tailwind's w-5/6
+    margin: 0 auto;
+    margin-bottom: 3.5%;
+  }
+
+  .title {
+    @apply text-primary;
+    font-weight: 600; // Equivalent to Tailwind's font-semibold
+    font-size: 2.25rem; // Equivalent to Tailwind's text-4xl
+    width: 58.333333%; // Equivalent to Tailwind's w-7/12
+
+    .highlight {
+      font-weight: 600;
+      @apply text-secondary;
+    }
+  }
+
+  .subtitle {
+    @apply text-secondary font-medium text-2xl;
+  }
+
+  .mission {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .text {
+      .description {
+        flex: 1;
+        font-size: 0.875rem; // Equivalent to Tailwind's text-sm
+        align-self: flex-end; // Equivalent to Tailwind's self-end
+        padding: 20px 20px 0 0; // Equivalent to Tailwind's p-5
+        font-weight: 500; // Equivalent to Tailwind's font-medium
+      }
+    }
+
+    .img-showcase {
+      width: 100%;
+      img {
+        max-height: 50vh;
+        min-height: 250px;
+        width: 100%;
+        object-fit: cover;
+        object-position: 30% 30%;
+      }
+    }
+  }
+
+  @media screen and (max-width: 1024px) {
+    margin-top: 15%;
+
+    .mission {
+      .text {
+        flex-direction: column;
+        width: 80%;
+        gap: 0.75rem;
+        margin-left: 2rem !important;
+        margin-right: 2rem !important;
+
+        .title {
+          font-size: 2rem;
+          width: 100%;
+        }
+
+        .description {
+          padding: 0 !important;
+        }
+      }
+
+      .img-showcase {
+        width: 100%;
+        img {
+          max-height: 30vh;
+          min-height: 250px;
+          border-radius: 20px;
+          padding-inline: 1rem;
+          margin: auto;
+        }
+      }
+    }
+
+    .story {
+      .text {
+        flex-direction: column;
+
+        > * {
+          width: 100% !important;
+          margin: 1rem;
+        }
+      }
+    }
+  }
+  @media screen and (max-width: 500px) {
+    margin-top: 25%;
+
+    .mission .text {
+      width: 90%;
+      gap: 0.75rem;
+      margin-left: 2rem !important;
+      margin-right: 2rem !important;
+
+      .title {
+        font-size: 1.7rem;
+        width: 100%;
+      }
+
+      .description {
+        padding: 0 !important;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .story {
+    margin-top: 7%;
+    .text {
+      border-top: 1.5px solid;
+      padding-top: 3%;
+      @apply border-neutral-400;
+
+      .title {
+        width: 50%;
+      }
+      .description {
+        width: 50%;
+      }
+      .subtitle {
+        margin-bottom: 4%;
+      }
+    }
+  }
+
+  .wrapper {
+    width: 60%;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+  }
+
+  .container {
+    background-color: white;
+    color: black;
+    border-radius: 20px;
+    box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+    margin: 20px 0;
+  }
+
+  .question {
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 20px 80px 20px 20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .question::after {
+    content: "\002B";
+    font-size: 2.2rem;
+    position: absolute;
+    right: 20px;
+    transition: 0.2s;
+    @apply text-primary;
+  }
+
+  .question.active::after {
+    transform: rotate(45deg);
+  }
+
+  .answercont {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+  }
+
+  .answercont.active {
+    max-height: 120px; /* large value to ensure the full content is visible */
+  }
+
+  .answer {
+    padding: 0 20px 20px;
+    line-height: 1.5rem;
+  }
+
+  @media screen and (max-width: 790px) {
+    html {
+      font-size: 14px;
+    }
+    .wrapper {
+      width: 80%;
+    }
+  }
+
+  .contact-link {
+    background-color: #f8f9fa;
+    padding: 50px 20px;
+    text-align: center;
+    margin-top: 50px;
+    border-top: 1px solid #e9ecef;
+  }
+
+  .contact-link-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 5%;
+  }
+
+  .contact-link-text h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    @apply text-primary font-semibold;
+  }
+
+  .contact-link-text p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #666;
+  }
+
+  .btn-primary {
+    @apply bg-primary;
+    color: #fff;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    @apply bg-secondary;
+  }
+
+  @media (min-width: 768px) {
+    .contact-link-wrapper {
+      flex-direction: row;
+      justify-content: space-between;
+      text-align: left;
+    }
+
+    .contact-link-text {
+      max-width: 500px;
+    }
+
+    .contact-img {
+      flex: 1;
+      background-image: url("https://giraffesconsulting.com/wp-content/uploads/2023/12/pexels-resume-genius-18848927-1024x683-1024x585.jpg");
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      width: 100%;
+      height: 250px;
+    }
+  }
+}
