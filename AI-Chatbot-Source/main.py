@@ -14,7 +14,6 @@ from flask_cors import CORS
 load_dotenv()
 GOOGLE_API_KEY = os.environ.get("GOOGLE_API_KEY")
 PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
-PINECONE_ENV = os.environ.get("PINECONE_ENV")
 
 # Configure Pinecone and Google Generative AI
 pc = Pinecone(api_key=PINECONE_API_KEY)
@@ -22,20 +21,6 @@ genai.configure(api_key=GOOGLE_API_KEY)
 
 app = Flask(__name__)
 CORS(app)
-
-def get_conversational_chain():
-    prompt_template = """
-    Answer the question as detailed as possible from the provided context, make sure to provide all the details, if the answer is not in the provided context just say, "answer is not available in the context", don't provide the wrong answer\n\n
-    Context:\n {context}?\n
-    Question: \n{question}\n
-    
-    Answer:
-    """
-    
-    model = ChatGoogleGenerativeAI(model="gemini-pro", temperature=0.3)
-    prompt = PromptTemplate(template=prompt_template, input_variables=["context", "question"])
-    chain = load_qa_chain(model, chain_type="stuff", prompt=prompt)
-    return chain
 
 def run_llm(query):
     embeddings = GoogleGenerativeAIEmbeddings(model="models/embedding-001")
